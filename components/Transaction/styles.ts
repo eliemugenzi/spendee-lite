@@ -14,6 +14,10 @@ export default StyleSheet.create({
     color: 'green',
   },
   transactionText: {
-    fontSize: 20,
+    fontSize: 18,
+  },
+  transactionDate: {
+    marginVertical: 5,
+    fontSize: 10,
   },
 });
