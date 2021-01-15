@@ -6,6 +6,7 @@ import Transaction from '../../components/Transaction';
 import Wallet from '../../components/Wallet';
 import {IRootState} from '../../redux/initialState';
 import {ITransaction} from '../../types';
+import FAB from '../../components/FAB';
 
 const styles = StyleSheet.create({
   wrapper: {
@@ -36,6 +37,7 @@ const Transactions: React.FC<{}> = () => {
           ))}
         </View>
       </SafeAreaView>
+      <FAB />
     </>
   );
 };

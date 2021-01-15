@@ -1,10 +1,10 @@
 import React from 'react';
-import {ViewStyle, StyleProp, View, Text} from 'react-native';
+import {ViewStyle, StyleProp, View, Text, ScrollView} from 'react-native';
 import {Card, Text as EvaText} from '@ui-kitten/components';
 import {useSelector} from 'react-redux';
+import numeral from 'numeral';
 
 import styles from './styles';
-import formatNumber from '../../helpers/formatNumber';
 import {IRootState} from '../../redux/initialState';
 
 interface ITransaction {
@@ -60,27 +60,27 @@ const Wallet: React.FC<Props> = ({transactions, style}) => {
   return (
     <View style={[styles.wrapper, style]}>
       <Text style={styles.walletTitle}>Spendee Lite</Text>
-      <View style={styles.cardHolder}>
+      <ScrollView style={styles.cardHolder} horizontal>
         <Card header={balanceHeader} style={styles.card}>
           <Text
             style={[
               expenses > income ? styles.balanceMinus : styles.balancePlus,
             ]}>
-            {formatNumber(income - expenses)} RWF
+            {numeral(income - expenses).format('0,0')} RWF
           </Text>
         </Card>
         <Card style={styles.card} header={expensesHeader}>
           <Text
             style={[expenses < 0 ? styles.balanceMinus : styles.balancePlus]}>
-            {formatNumber(expenses)} RWF
+            {numeral(expenses).format('0,0')} RWF
           </Text>
         </Card>
         <Card style={styles.card} header={incomeHeader}>
           <Text style={[income < 0 ? styles.balanceMinus : styles.balancePlus]}>
-            {formatNumber(income)} RWF
+            {numeral(income).format('0,0')} RWF
           </Text>
         </Card>
-      </View>
+      </ScrollView>
     </View>
   );
 };

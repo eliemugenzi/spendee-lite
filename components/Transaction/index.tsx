@@ -1,9 +1,9 @@
 import React from 'react';
 import {View, Text, ViewStyle, StyleProp} from 'react-native';
 import moment from 'moment';
+import numeral from 'numeral';
 
 import styles from './styles';
-import formatNumber from '../../helpers/formatNumber';
 
 interface Props {
   type: 'income' | 'expenses';
@@ -34,7 +34,7 @@ const Transaction: React.FC<Props> = ({
         style={[
           type === 'expenses' ? styles.expensesAmount : styles.incomeAmount,
         ]}>
-        {formatNumber(amount)} RWF
+        {numeral(amount).format('0,0')} RWF
       </Text>
     </View>
   );
