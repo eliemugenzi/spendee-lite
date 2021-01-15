@@ -4,7 +4,7 @@ export default StyleSheet.create({
   wrapper: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginHorizontal: 50,
+    marginHorizontal: 20,
     marginVertical: 10,
   },
   expensesAmount: {
@@ -14,7 +14,7 @@ export default StyleSheet.create({
     color: 'green',
   },
   transactionText: {
-    fontSize: 18,
+    fontSize: 15,
   },
   transactionDate: {
     marginVertical: 5,
