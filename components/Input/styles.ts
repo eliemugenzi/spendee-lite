@@ -7,6 +7,9 @@ const styles = StyleSheet.create({
     width: '100%',
     backgroundColor: colors.white,
     marginBottom: dimensions.padding * 0.6,
+    borderColor: colors.primary,
+    borderWidth: 1,
+    borderRadius: 4,
   },
   wrapperLast: {
     marginBottom: dimensions.padding / 2,

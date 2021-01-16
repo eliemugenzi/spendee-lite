@@ -24,6 +24,7 @@ import Button from '../../components/Button';
 
 import {addTransactions} from '../../redux/reducers/transactions';
 import {addSms} from '../../redux/reducers/sms';
+import colors from '../../colors';
 
 const styles = StyleSheet.create({
   wrapper: {
@@ -44,6 +45,11 @@ const styles = StyleSheet.create({
   flatList: {
     flex: 1,
     paddingBottom: Dimensions.get('window').height,
+  },
+  evaInput: {
+    borderColor: colors.primary,
+    // borderWidth: 2,
+    borderRadius: 4,
   },
 });
 
@@ -177,6 +183,19 @@ const Transactions: React.FC<{}> = () => {
             Add a new transaction
           </EvaText>
           <Select
+            placeholder="Payment Method"
+            options={[
+              {
+                label: 'MasterCard',
+                value: 'mastercard',
+              },
+              {
+                label: 'Mobile Money',
+                value: 'mobilemoney',
+              },
+            ]}
+          />
+          <Select
             placeholder="Transaction Type"
             options={[
               {
@@ -219,6 +238,7 @@ const Transactions: React.FC<{}> = () => {
                 description: v,
               });
             }}
+            style={styles.evaInput}
           />
           <EvaInput
             keyboardType="number-pad"
@@ -231,6 +251,7 @@ const Transactions: React.FC<{}> = () => {
             }}
             placeholder="Amount"
             label="Amount"
+            style={styles.evaInput}
           />
           {error && <Text style={styles.errorText}>{error}</Text>}
           <Button onPress={handleSubmit}>Submit</Button>
