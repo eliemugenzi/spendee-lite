@@ -48,7 +48,6 @@ const styles = StyleSheet.create({
   },
   evaInput: {
     borderColor: colors.primary,
-    // borderWidth: 2,
     borderRadius: 4,
   },
 });
