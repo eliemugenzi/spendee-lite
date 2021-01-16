@@ -54,7 +54,7 @@ const Input: React.FC<Props> = ({
   info,
   light,
   disabled = false,
-  noLine,
+  noLine = true,
   onFocus,
   secureTextEntry,
   listItem,
