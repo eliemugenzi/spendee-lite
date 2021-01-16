@@ -1,5 +1,6 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {useSelector} from 'react-redux';
 import {NavigationContainer} from '@react-navigation/native';
 import Icons from '../icons';
 import FeatherIcon from 'react-native-vector-icons/Feather';
@@ -8,8 +9,11 @@ const Tab = createBottomTabNavigator();
 
 import Transactions from './screens/Transactions';
 import Sms from './screens/Sms';
+import {IRootState} from '../redux/initialState';
 
 const AppTabs = () => {
+  const {sms}: any = useSelector((state: IRootState) => state.sms);
+
   return (
     <NavigationContainer>
       <Tab.Navigator>
@@ -29,7 +33,7 @@ const AppTabs = () => {
             tabBarIcon: ({size, color}: {size: number; color: string}) => (
               <FeatherIcon name="message-square" size={size} color={color} />
             ),
-            tabBarBadge: 3,
+            tabBarBadge: sms.data.length > 0 ? sms.data.length : undefined,
           }}
         />
       </Tab.Navigator>

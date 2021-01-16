@@ -1,7 +1,10 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {View, Text, ViewStyle, StyleProp} from 'react-native';
 import moment from 'moment';
 import numeral from 'numeral';
+import stc from 'string-to-color';
+import {capitalize} from 'lodash';
 
 import styles from './styles';
 
@@ -11,6 +14,7 @@ interface Props {
   amount: number;
   style?: StyleProp<ViewStyle>;
   created_at: Date;
+  category: string;
 }
 
 const Transaction: React.FC<Props> = ({
@@ -19,6 +23,7 @@ const Transaction: React.FC<Props> = ({
   amount,
   style,
   created_at,
+  category,
 }) => {
   return (
     <View style={[styles.wrapper, style]}>
@@ -26,6 +31,9 @@ const Transaction: React.FC<Props> = ({
         {description && (
           <Text style={styles.transactionText}>{description}</Text>
         )}
+        <Text style={{color: stc(category), fontSize: 12}}>
+          {capitalize(category)}
+        </Text>
         <Text style={styles.transactionDate}>
           {moment(created_at).format('MMM Do, YYYY HH:mm A')}
         </Text>

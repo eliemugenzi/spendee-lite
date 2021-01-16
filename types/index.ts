@@ -16,6 +16,7 @@ export interface ITransaction {
   description?: string;
   amount: number;
   created_at: Date;
+  category: string;
 }
 
 export interface ISms {

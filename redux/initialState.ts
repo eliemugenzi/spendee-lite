@@ -11,7 +11,14 @@ export interface IRootState {
 
 const state: IRootState = {
   sms: {
-    data: [],
+    data: [
+      {
+        id: 1,
+        text: 'Hello world',
+        read: true,
+        created_at: new Date(),
+      },
+    ],
   },
   transactions: {
     data: [
@@ -21,6 +28,7 @@ const state: IRootState = {
         description: 'The art of spending',
         amount: 1000,
         created_at: new Date(),
+        category: 'shopping',
       },
       {
         id: 2,
@@ -28,6 +36,7 @@ const state: IRootState = {
         description: 'ChipperCash giveaway',
         amount: 100000,
         created_at: new Date(),
+        category: 'gifts',
       },
       {
         id: 3,
@@ -35,6 +44,7 @@ const state: IRootState = {
         description: 'Transport',
         amount: 1500,
         created_at: new Date(),
+        category: 'transport',
       },
     ],
   },
