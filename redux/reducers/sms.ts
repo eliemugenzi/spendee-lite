@@ -11,6 +11,8 @@ type IAction = {
 export default (state: IRootState = initialState, action: IAction) => {
   switch (action.type) {
     case SMS_TYPE[0]:
+      console.log('ZZZZ___', action.payload);
+
       return {
         ...state,
         sms: {
