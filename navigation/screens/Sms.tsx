@@ -31,7 +31,6 @@ const Sms = () => {
     },
   });
 
-  console.log('RECENT SMS', sms);
   return (
     <>
       <StatusBar barStyle="dark-content" />

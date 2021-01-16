@@ -33,8 +33,6 @@ export default (state: IRootState = initialState, action: IAction) => {
         read: false,
       };
 
-      console.log('___SMS', message);
-
       const newState = {
         ...state,
         transactions: {

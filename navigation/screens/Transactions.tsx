@@ -177,6 +177,19 @@ const Transactions: React.FC<{}> = () => {
             Add a new transaction
           </EvaText>
           <Select
+            placeholder="Payment Method"
+            options={[
+              {
+                label: 'MasterCard',
+                value: 'mastercard',
+              },
+              {
+                label: 'Mobile Money',
+                value: 'mobilemoney',
+              },
+            ]}
+          />
+          <Select
             placeholder="Transaction Type"
             options={[
               {
