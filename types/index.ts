@@ -22,4 +22,5 @@ export interface ISms {
   id: number;
   text: string;
   created_at: Date;
+  read?: boolean;
 }
